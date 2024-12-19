@@ -4,7 +4,7 @@ export class HotDaysRouter {
   private readonly router = Router();
 
   constructor() {
-    this.router.get("/fun", (_req, res) => {
+    this.router.get("/hot-days", (_req, res) => {
       console.log("Hot Days");
       res.send("Route is working!");
     });
