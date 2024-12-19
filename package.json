@@ -1,0 +1,46 @@
+{
+  "name": "typescript-api-skeleton",
+  "version": "4.0.0",
+  "type": "module",
+  "description": "A simple TypeScript skeleton for easy tasks. For anything more complex, a DDD structure is recommended.",
+  "main": "./dist/src/main.js",
+  "scripts": {
+    "start": "node ./dist/src/main.js",
+    "dev": "tsx ./src/main.ts",
+    "dev:debug": "tsx --inspect ./src/main.ts",
+    "build": "tsc",
+    "lint": "biome check",
+    "format": "biome check --write",
+    "test": "glob test/**/*.test.ts -c 'tsx --test'",
+    "test:debug": "glob test/**/*.test.ts -c 'tsx --test --inspect'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoscoDomingo/typescript-api-skeleton.git"
+  },
+  "keywords": [
+    "api",
+    "skeleton",
+    "typescript"
+  ],
+  "author": "Bosco Domingo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BoscoDomingo/typescript-api-skeleton/issues"
+  },
+  "homepage": "https://github.com/BoscoDomingo/typescript-api-skeleton#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "@types/supertest": "^6.0.2",
+    "glob": "^11.0.0",
+    "supertest": "^7.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
