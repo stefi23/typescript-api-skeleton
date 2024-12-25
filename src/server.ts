@@ -12,6 +12,7 @@ import sampleData from "../data/sample.json" with { type: "json" };
 import { BaseController } from "./controllers/base.controller.js";
 import { BaseRouter } from "./routes/base.route.js";
 import { BaseService } from "./services/base.service.js";
+import { HotDaysRouter } from "./routes/hot-days.route.js";
 
 dotenv.config();
 const app = express();
@@ -30,8 +31,13 @@ app.use(
 const baseService = new BaseService(sampleData);
 const baseController = new BaseController(baseService);
 const baseRouter = new BaseRouter(baseController);
+const hotDaysRouter = new HotDaysRouter();
 
 app.use("/", baseRouter.configureRouter());
+app.use("/", hotDaysRouter.getRouter());
+
+
+
 
 app.use((err: Error, req: Request, res: Response, _next: NextFunction) => {
 	console.error(
